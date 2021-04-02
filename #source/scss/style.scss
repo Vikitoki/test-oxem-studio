@@ -1,0 +1,91 @@
+//<ПЕРЕМЕННЫЕ>
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1440;
+$md1: $maxWidthContainer + 12;
+$md2: 1023.98;
+$md3: 767.98;
+$md4: 479.98;
+$nxt: "Next-Black";
+//</ПЕРЕМЕННЫЕ>
+
+// <ПОДКЛЮЧЕНИЕ ШРИФТОВ>
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../../fonts/Gilroy-Regular.eot");
+  src: url("../../fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/Gilroy-Regular.woff") format("woff"),
+    url("../../fonts/Gilroy-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../../fonts/Gilroy-Bold.eot");
+  src: url("../../fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/Gilroy-Bold.woff") format("woff"),
+    url("../../fonts/Gilroy-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Next-Black";
+  src: url("../../fonts/SKODANext-Black.eot");
+  src: local("☺"), url("../../fonts/SKODANext-Black.woff") format("woff"),
+    url("../../fonts/SKODANext-Black.ttf") format("truetype"),
+    url("../../fonts/SKODANext-Black.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// </ПОДКЛЮЧЕНИЕ ШРИФТОВ>
+
+//<ШРИФТ ПО УМОЛЧАНИЮ>
+$fontFamily: "Gilroy";
+//</ШРИФТ ПО УМОЛЧАНИЮ>
+
+//<ПОДКЛЮЧЕНИЕ ОБЯЗАТЕЛЬНЫХ SCSS КОМПОНЕНТОВ>
+@import "./common/null.scss";
+@import "./common/mixins.scss";
+//</ПОДКЛЮЧЕНИЕ ОБЯЗАТЕЛЬНЫХ SCSS КОМПОНЕНТОВ>
+
+//<ОБОЛОЧКА>
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+//</ОБОЛОЧКА>
+
+//<ОСНОВНАЯ СЕТКА>
+.container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 48px;
+}
+//</ОСНОВНАЯ СЕТКА>
+
+//<ПОДКЛЮЧЕНИЕ СТРАНИЦ>
+
+// Index
+@import "./index/header.scss";
+@import "./index/intro.scss";
+@import "./index/services.scss";
+@import "./index/blog.scss";
+@import "./index/footer.scss";
+
+//<ПОДКЛЮЧЕНИЕ СТРАНИЦ>
+
+//<ПОДКЛЮЧЕНИЕ ОБЩИХ СТИЛЕЙ>
+@import "./common/common-classes.scss";
+@import "./common/forms.scss";
+@import "./common/sliders.scss";
+//<ПОДКЛЮЧЕНИЕ ОБЩИХ СТИЛЕЙ>

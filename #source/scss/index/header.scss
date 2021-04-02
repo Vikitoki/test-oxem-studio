@@ -1,0 +1,331 @@
+//====================================================================================================
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+
+  background-color: #fff;
+
+  position: relative;
+
+  @media (max-width: $md4 + px) {
+    background-color: transparent;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: $md1 + px) {
+      padding: 0 36px;
+    }
+
+    @media (max-width: $md3 + px) {
+      padding: 0 20px;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 200px;
+    margin-right: 34px;
+
+    @media (max-width: $md1 + px) {
+      flex: 0 0 165px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+
+      display: block;
+      flex: 0 0 1px;
+      margin-left: 17px;
+      width: 1px;
+      height: 30px;
+
+      pointer-events: none;
+
+      background-color: #c4c4c4;
+
+      @media (max-width: $md3 + px) {
+        display: none;
+      }
+    }
+  }
+
+  &__slogan {
+    display: block;
+
+    @media (max-width: $md3 + px) {
+      display: none;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__close {
+    display: none;
+    @media (max-width: $md2 + px) {
+      display: block;
+
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      z-index: 1;
+
+      background: none;
+      border: none;
+    }
+  }
+
+  &__menu {
+    margin-right: 32px;
+
+    @media (min-width: $md1 + px) {
+      margin-right: 18px;
+    }
+
+    @media (max-width: $md2 + px) {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      height: 100%;
+
+      background-color: rgba(17, 17, 17, 0.5);
+
+      opacity: 0;
+      visibility: hidden;
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      transition: all 0.3s ease;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+
+        z-index: 2000;
+      }
+    }
+  }
+
+  &__menu-content {
+    @media (max-width: $md2 + px) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 330px;
+      padding: 64px 44px 44px;
+
+      position: relative;
+
+      background-color: #fff;
+      border-radius: 32px 0px 0px 0px;
+
+      transform: translateX(250%);
+      transition: transform 0.3s ease;
+
+      &.active {
+        transform: translateX(0%);
+      }
+    }
+  }
+
+  &__menu-icon {
+    display: none;
+    width: 25px;
+    flex: 0 0 25px;
+    height: 23px;
+
+    cursor: pointer;
+
+    span {
+      display: block;
+      margin-bottom: 6px;
+      width: 100%;
+      height: 3px;
+
+      background-color: #000;
+      border-radius: 15px;
+
+      transition: transform 0.2s linear, opacity 0.2s linear;
+
+      &:nth-child(3) {
+        width: 70%;
+      }
+    }
+
+    &.active {
+      position: relative;
+      span {
+        margin: 0;
+        &:nth-child(3) {
+          opacity: 0;
+        }
+        &:nth-child(2),
+        &:nth-child(1) {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          z-index: 1;
+        }
+
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    @media (max-width: $md2+px) {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    li {
+      margin-right: 32px;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @media (max-width: $md1 + px) {
+        margin-right: 18px;
+      }
+
+      @media (max-width: $md2 + px) {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    @media (max-width: $md2 + px) {
+      display: block;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 8px 15px;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: 700;
+    color: #575757;
+    line-height: 24px;
+
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+
+    @media (min-width: $md2 + px) {
+      &:hover {
+        background-color: #e9e9e9;
+      }
+
+      &:active {
+        background-color: #b1adad;
+      }
+    }
+
+    @media (max-width: $md2 + px) {
+      font-size: 24px;
+    }
+    &_leasing {
+    }
+  }
+
+  &__actions {
+    display: none;
+  }
+
+  &__btns {
+    @media (max-width: $md2 + px) {
+      display: none;
+    }
+
+    &_menu {
+      display: none;
+
+      @media (max-width: $md2 + px) {
+        display: block;
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+.actions-header {
+  &__list {
+  }
+
+  &__link {
+  }
+}
+
+//====================================================================================================
+
+// &__mobile-menu {
+// 	display: block;
+// 	width: 100%;
+// 	padding-top: 96px;
+
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	z-index: 1;
+
+// 	background-color: rgba(0, 0, 0, 0.4);
+
+// 	transform: translateX(-100%);
+// 	transition: transform 0.2s linear;
+
+// 	overflow: auto;
+
+// 	&.active {
+// 		transform: translateX(0%);
+// 	}
+
+// 	@media (max-width: $md3 + px) {
+// 		height: 100vh;
+// 	}
+// }
+
+// Adapt for iphone 5
+
+// @media (max-width: $md2 + px) {
+// 	min-height: 100vh;
+// 	height: 100%;
+// 	padding-top: 130px;
+
+// 	overflow: auto;
+// }
