@@ -3,15 +3,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1000;
 
-  display: block;
   width: 100%;
   padding: 20px 0;
 
   background-color: #fff;
-
-  position: relative;
 
   @media (max-width: $md4 + px) {
     background-color: transparent;
@@ -125,11 +122,42 @@
 
       transition: all 0.3s ease;
 
+      &::after {
+        content: "";
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+
+        border-radius: 38px 0px 0px 0px;
+        background-color: #fff;
+
+        display: block;
+        width: 320px;
+        height: 25px;
+
+        opacity: 0;
+
+        transform: translateX(200%);
+        transition: transform 0.4s ease;
+
+        @media (max-width: $md4 + px) {
+          width: 250px;
+        }
+      }
+
       &.active {
         opacity: 1;
         visibility: visible;
 
         z-index: 2000;
+
+        &::after {
+          opacity: 1;
+
+          transform: translateX(0%);
+        }
       }
     }
   }
@@ -149,9 +177,16 @@
 
       transform: translateX(250%);
       transition: transform 0.3s ease;
+      overflow: auto;
 
       &.active {
         transform: translateX(0%);
+      }
+
+      @media (max-width: $md4 + px) {
+        padding: 64px 24px 24px;
+
+        width: 260px;
       }
     }
   }
@@ -177,6 +212,10 @@
 
       &:nth-child(3) {
         width: 70%;
+      }
+
+      @media (max-width: $md4 + px) {
+        background-color: #fff;
       }
     }
 
@@ -230,6 +269,11 @@
 
     @media (max-width: $md2 + px) {
       display: block;
+      min-height: 250px;
+
+      margin-bottom: 40px;
+
+      // overflow: auto;
     }
   }
 
@@ -281,6 +325,10 @@
         margin-top: auto;
       }
     }
+  }
+
+  &__btn {
+    width: 100%;
   }
 }
 

@@ -2,8 +2,19 @@
   <div class="header__container container">
     <div class="header__left">
       <a href="#" class="header__logo">
-        <img src="../images/header/logo.svg" alt="Leasing Car" />
+        <picture>
+          <source
+            media="(min-width: 480px)"
+            srcset="../images/header/logo.svg"
+          />
+          <source
+            media="(max-width: 480px)"
+            srcset="../images/header/logo-mobile.svg"
+          />
+          <img src="../images/header/logo.svg" alt="Leasing Car" />
+        </picture>
       </a>
+
       <div class="header__slogan">лизинговая компания</div>
     </div>
     <div class="header__right">
@@ -41,7 +52,7 @@
             </li>
           </ul>
           <div class="header__btns header__btns_menu">
-            <a href="#" class="btn btn_orange">Оставить заявку</a>
+            <a href="#" class="header__btn btn btn_orange">Оставить заявку</a>
           </div>
         </div>
       </div>
@@ -51,9 +62,7 @@
         <span></span>
       </div>
       <div class="header__btns">
-        <a href="#" class="btn btn_orange-outline">
-          Оставить заявку
-        </a>
+        <a href="#" class="btn btn_orange-outline"> Оставить заявку </a>
       </div>
     </div>
   </div>

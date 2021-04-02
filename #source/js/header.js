@@ -10,9 +10,11 @@ closeMenuBtn.addEventListener("click", closeMenu);
 function closeMenu() {
   mobileMenu.classList.remove("active");
   mobileMenuContent.classList.remove("active");
+  document.body.classList.remove("lock");
 }
 
 function openMenu() {
   mobileMenu.classList.add("active");
   mobileMenuContent.classList.add("active");
+  document.body.classList.add("lock");
 }
