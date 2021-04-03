@@ -1,0 +1,145 @@
+.calculator {
+  padding: 80px 0;
+
+  @media (max-width: $md4 + px) {
+    padding: 65px 0 47px;
+  }
+  &__container {
+    @media (max-width: $md2 + px) {
+      padding: 0 36px;
+    }
+
+    @media (max-width: $md4 + px) {
+      padding: 0 15px;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 750px;
+    margin-bottom: 44px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    margin: 0 -15px 50px;
+
+    @media (max-width: $md1 + px) {
+      margin: 0 0 45px 0;
+
+      display: block;
+    }
+  }
+
+  &__item {
+    flex: 0 1 33.33333%;
+    padding: 0 15px;
+
+    @media (max-width: $md1 + px) {
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__footer {
+  }
+}
+
+.item-calculator {
+  &__top {
+    display: block;
+    margin-bottom: 24px;
+
+    font-size: 16px;
+    font-weight: 400;
+    color: #575757;
+    line-height: 24px;
+  }
+
+  &__bottom {
+  }
+}
+
+.footer-calculator {
+  @media (min-width: $md1 + px) {
+    display: flex;
+  }
+
+  &__content {
+    display: flex;
+    margin-bottom: 44px;
+
+    @media (min-width: $md1 + px) {
+      flex: 0 1 66.66666%;
+    }
+
+    @media (max-width: $md3 + px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: $md4 + px) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__item {
+    flex: 0 1 50%;
+
+    @media (max-width: $md3 + px) {
+      flex: 0 0 100%;
+
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__top {
+    display: block;
+    margin-bottom: 10px;
+
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 24px;
+  }
+
+  &__bottom {
+    display: block;
+
+    font-family: $nxt;
+    font-size: 54px;
+    font-weight: 900;
+    color: #333333;
+    line-height: 62px;
+
+    @media (max-width: $md3 + px) {
+      font-size: 22px;
+      line-height: 31px;
+    }
+  }
+
+  &__btns {
+    @media (min-width: $md1 + px) {
+      flex: 0 1 33.33333%;
+      padding-left: 30px;
+    }
+
+    @media (max-width: $md3 + px) {
+      text-align: center;
+    }
+  }
+
+  &__btn {
+    @media (min-width: $md1 + px) {
+      width: 100%;
+      max-width: none !important;
+    }
+  }
+}
