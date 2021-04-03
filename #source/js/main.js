@@ -4,4 +4,5 @@ document.addEventListener("DOMContentLoaded", function () {
 	
   //@prepros-append ./header.js
   //@prepros-append ./intro.js
+  //@prepros-append ./calculator.js
 });

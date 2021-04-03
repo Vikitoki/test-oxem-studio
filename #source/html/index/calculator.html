@@ -3,7 +3,7 @@
     <h2 class="calculator__title title title_black">
       Рассчитайте стоимость автомобиля в лизинг
     </h2>
-    <form action="#" class="calculator__form">
+    <div class="calculator__form">
       <div class="calculator__content">
         <div class="calculator__item item-calculator">
           <div class="item-calculator__top">Стоимость автомобиля</div>
@@ -13,13 +13,8 @@
                 <input type="input" name="price" id="price" value="3 300 000" />
                 <span> &#8381;</span>
               </div>
-              <div class="range__slide">
-                <input
-                  type="range"
-                  min="1000000"
-                  max="6000000"
-                  value="3200000"
-                />
+              <div class="range__slide range__slide_price">
+                <input maxlength="6" type="range" min="1000000" max="6000000" />
               </div>
             </div>
           </div>
@@ -28,20 +23,14 @@
           <div class="item-calculator__top">Первоначальный взнос</div>
           <div class="item-calculator__bottom">
             <div class="range">
-              <div class="range__value">
-                <input
-                  type="input"
-                  name="price"
-                  id="price"
-                  value="440 000 &#8381;"
-                />
+              <div class="range__value range__value_percent">
+                <input type="input" name="price" id="price" disabled />
                 <span class="range__percent">10%</span>
               </div>
-              <div class="range__slide">
+              <div class="range__slide range__slide_percent">
                 <input
                   type="range"
-                  name="price"
-                  id="price"
+                  name="persent"
                   min="10"
                   max="60"
                   value="10"
@@ -55,18 +44,17 @@
           <div class="item-calculator__bottom">
             <div class="range">
               <div class="range__value">
-                <input type="input" name="price" id="price" value="60" />
-                <span>мес.</span>
-              </div>
-              <div class="range__slide">
                 <input
-                  type="range"
+                  type="input"
                   name="price"
                   id="price"
-                  min="1"
-                  max="60"
                   value="60"
+                  disabled
                 />
+                <span>мес.</span>
+              </div>
+              <div class="range__slide range__slide_month">
+                <input type="range" name="month" min="1" max="60" value="60" />
               </div>
             </div>
           </div>
@@ -92,6 +80,6 @@
           </button>
         </div>
       </div>
-    </form>
+    </div>
   </div>
 </section>
