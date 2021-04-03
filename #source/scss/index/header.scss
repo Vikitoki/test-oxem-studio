@@ -10,6 +10,12 @@
 
   background-color: #fff;
 
+  @media (min-width: $md4 + px) {
+    &.active {
+      background-color: #000;
+    }
+  }
+
   @media (max-width: $md4 + px) {
     background-color: #000;
   }
@@ -41,6 +47,19 @@
 
     @media (max-width: $md1 + px) {
       flex: 0 0 165px;
+    }
+
+    @media (min-width: $md4 + px) {
+      &.active {
+        min-height: 29px;
+
+        background: url(../images/header/logo-mobile.svg) center no-repeat;
+        background-size: cover;
+
+        img {
+          display: none;
+        }
+      }
     }
 
     img {
@@ -197,6 +216,9 @@
     flex: 0 0 25px;
     height: 23px;
 
+    background: none;
+    border: none;
+
     cursor: pointer;
 
     span {
@@ -219,29 +241,14 @@
       }
     }
 
-    &.active {
-      position: relative;
-      span {
-        margin: 0;
-        &:nth-child(3) {
-          opacity: 0;
-        }
-        &:nth-child(2),
-        &:nth-child(1) {
-          position: absolute;
-          top: 50%;
-          left: 0;
-          z-index: 1;
-        }
-
-        &:nth-child(1) {
-          transform: rotate(45deg);
-        }
-        &:nth-child(2) {
-          transform: rotate(-45deg);
+    @media (min-width: $md4 + px) {
+      &.active {
+        span {
+          background-color: #fff;
         }
       }
     }
+
     @media (max-width: $md2+px) {
       display: block;
     }

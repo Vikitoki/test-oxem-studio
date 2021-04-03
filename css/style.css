@@ -167,6 +167,11 @@ h6 {
   padding: 20px 0;
   background-color: #fff;
 }
+@media (min-width: 479.98px) {
+  .header.active {
+    background-color: #000;
+  }
+}
 @media (max-width: 479.98px) {
   .header {
     background-color: #000;
@@ -200,6 +205,16 @@ h6 {
 @media (max-width: 1452px) {
   .header__logo {
     flex: 0 0 165px;
+  }
+}
+@media (min-width: 479.98px) {
+  .header__logo.active {
+    min-height: 29px;
+    background: url(../images/header/logo-mobile.svg) center no-repeat;
+    background-size: cover;
+  }
+  .header__logo.active img {
+    display: none;
   }
 }
 .header__logo img {
@@ -333,6 +348,8 @@ h6 {
   width: 25px;
   flex: 0 0 25px;
   height: 23px;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 .header__menu-icon span {
@@ -352,26 +369,10 @@ h6 {
     background-color: #fff;
   }
 }
-.header__menu-icon.active {
-  position: relative;
-}
-.header__menu-icon.active span {
-  margin: 0;
-}
-.header__menu-icon.active span:nth-child(3) {
-  opacity: 0;
-}
-.header__menu-icon.active span:nth-child(2), .header__menu-icon.active span:nth-child(1) {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 1;
-}
-.header__menu-icon.active span:nth-child(1) {
-  transform: rotate(45deg);
-}
-.header__menu-icon.active span:nth-child(2) {
-  transform: rotate(-45deg);
+@media (min-width: 479.98px) {
+  .header__menu-icon.active span {
+    background-color: #fff;
+  }
 }
 @media (max-width: 1023.98px) {
   .header__menu-icon {

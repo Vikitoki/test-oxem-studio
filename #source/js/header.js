@@ -1,11 +1,41 @@
 const mobileIcon = document.querySelector(".header__menu-icon"),
   mobileMenu = document.querySelector(".header__menu"),
   mobileMenuContent = document.querySelector(".header__menu-content"),
-  closeMenuBtn = document.querySelector(".header__close");
+  closeMenuBtn = document.querySelector(".header__close"),
+  introBlock = document.querySelector(".intro"),
+  headerBlock = document.querySelector(".header"),
+  headerLogo = document.querySelector(".header__logo");
 
 mobileIcon.addEventListener("click", openMenu);
 
 closeMenuBtn.addEventListener("click", closeMenu);
+
+window.addEventListener("scroll", function (event) {
+  if (
+    document.documentElement.scrollTop > introBlock.clientWidth / 5 &&
+    document.documentElement.clientWidth <= 768
+  ) {
+    modifiedHeader(true);
+  } else {
+    modifiedHeader(false);
+  }
+});
+
+window.addEventListener("resize", function () {
+  closeMenu();
+});
+
+function modifiedHeader(bool) {
+  if (bool) {
+    headerBlock.classList.add("active");
+    mobileIcon.classList.add("active");
+    headerLogo.classList.add("active");
+  } else {
+    headerBlock.classList.remove("active");
+    mobileIcon.classList.remove("active");
+    headerLogo.classList.remove("active");
+  }
+}
 
 function closeMenu() {
   mobileMenu.classList.remove("active");
