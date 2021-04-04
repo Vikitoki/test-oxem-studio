@@ -995,6 +995,12 @@ h6 {
   border-color: #ff9514;
   background-color: #fff;
 }
+.form__input._error {
+  border-color: red;
+}
+.form__input._complite {
+  border-color: #4caf50;
+}
 .form__footer {
   display: flex;
   align-items: center;

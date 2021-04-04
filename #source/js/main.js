@@ -5,4 +5,5 @@ document.addEventListener("DOMContentLoaded", function () {
   //@prepros-append ./intro.js
   //@prepros-append ./calculator.js
   //@prepros-append ./modal.js
+  //@prepros-append ./default/forms.js
 });

@@ -243,6 +243,14 @@
 
       background-color: #fff;
     }
+
+    &._error {
+      border-color: red;
+    }
+
+    &._complite {
+      border-color: #4caf50;
+    }
   }
 
   &__footer {
