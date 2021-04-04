@@ -4,11 +4,24 @@ const mobileIcon = document.querySelector(".header__menu-icon"),
   closeMenuBtn = document.querySelector(".header__close"),
   introBlock = document.querySelector(".intro"),
   headerBlock = document.querySelector(".header"),
-  headerLogo = document.querySelector(".header__logo");
+  headerLogo = document.querySelector(".header__logo"),
+  headerLising = document.querySelector(".header__leasing"),
+  headerActions = document.querySelector(".actions-header");
 
 mobileIcon.addEventListener("click", openMenu);
-
 closeMenuBtn.addEventListener("click", closeMenu);
+
+headerLising.addEventListener("mouseenter", function () {
+  if (document.documentElement.clientWidth >= 1024) {
+    headerActions.classList.add("active");
+  }
+});
+
+headerLising.addEventListener("mouseleave", function () {
+  if (document.documentElement.clientWidth >= 1024) {
+    headerActions.classList.remove("active");
+  }
+});
 
 window.addEventListener("scroll", function (event) {
   if (
