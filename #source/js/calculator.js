@@ -3,6 +3,9 @@ const rangePercentInput = document.querySelector(".range__slide_percent input");
 const rangePercentValue = document.querySelector(".range__percent");
 const rangeValues = document.querySelectorAll(".range__value input");
 const rangeMonth = document.querySelector(".range__slide_month");
+const contractTotalValue = document.querySelectorAll(
+  ".footer-calculator__bottom"
+);
 const maxValue = 6000000;
 const minValue = 1000000;
 const startValue = 3200000;
@@ -12,6 +15,9 @@ let currentMax = 1980000;
 rangeValues[1].value = `${currentMin} ₽`;
 rangePrice.value = startValue;
 
+calculatingTotalContractValue();
+calculatingMonthlyPayment();
+
 rangePrice.addEventListener("input", function () {
   const percentValue = Math.floor(
     rangePrice.value * (rangePercentInput.value / 100)
@@ -19,6 +25,9 @@ rangePrice.addEventListener("input", function () {
 
   rangeValues[0].value = calculatingTotalValue(this);
   rangeValues[1].value = `${calculatingTotalValue(null, percentValue)} ₽`;
+
+  calculatingMonthlyPayment();
+  calculatingTotalContractValue();
 });
 
 rangePercentInput.addEventListener("input", function () {
@@ -28,6 +37,9 @@ rangePercentInput.addEventListener("input", function () {
 
   rangeValues[1].value = `${calculatingTotalValue(null, percentValue)} ₽`;
   rangePercentValue.textContent = `${rangePercentInput.value}%`;
+
+  calculatingMonthlyPayment();
+  calculatingTotalContractValue();
 });
 
 rangeValues[0].addEventListener("change", function (event) {
@@ -51,6 +63,9 @@ rangeValues[0].addEventListener("change", function (event) {
   rangePercentInput.value = 10;
   rangePercentValue.textContent = `10%`;
   rangePrice.value = rangeValues[0].value.split(" ").join("");
+
+  calculatingMonthlyPayment();
+  calculatingTotalContractValue();
 });
 
 rangeValues[0].addEventListener("input", function (event) {
@@ -63,22 +78,54 @@ rangeValues[0].addEventListener("input", function (event) {
   const modifiedThousand = checkLength(thousand),
     modifiedDozens = checkLength(dozens);
 
-  console.log(event.target.value.length);
-
   if (event.target.value.length < 3) {
     event.target.value = event.target.value;
-  } else if (event.target.value.length > 3) {
+  } else if (event.target.value.length > 3 && event.target.value.length < 10) {
     event.target.value = `${million ? million : ""} ${
       modifiedThousand !== "000" ? modifiedThousand : ""
     } ${modifiedDozens !== "000" ? modifiedDozens : ""}`;
-  } 
+  } else if (event.target.value.length > 9) {
+    rangeValues[0].value = "6 000 000";
+  }
 
   rangePrice.value = rangeValues[0].value.split(" ").join("");
+
+  calculatingMonthlyPayment();
+  calculatingTotalContractValue();
 });
 
 rangeMonth.addEventListener("input", function (event) {
   rangeValues[2].value = event.target.value;
+
+  calculatingMonthlyPayment();
+  calculatingTotalContractValue();
 });
+
+function calculatingTotalContractValue() {
+  contractTotalValue[0].textContent = `${calculatingTotalValue(
+    null,
+    parseInt(rangeValues[1].value.split(" ").join("")) +
+      parseInt(rangeValues[2].value) *
+        parseInt(contractTotalValue[1].textContent.split(" ").join(""))
+  )} ₽`;
+}
+
+function calculatingMonthlyPayment() {
+  contractTotalValue[1].textContent = `${calculatingTotalValue(
+    null,
+    Math.floor(
+      Math.floor(
+        parseInt(rangeValues[0].value.split(" ").join("")) -
+          parseInt(rangeValues[1].value.split(" ").join("")) *
+            (parseInt(rangePercentValue.textContent) /
+              100 /
+              ((parseInt(rangePercentValue.textContent) + 1) / 100) -
+              parseInt(rangeValues[2].value) -
+              1)
+      ) / parseInt(rangeValues[2].value)
+    )
+  )} ₽`;
+}
 
 function checkMinMax(event, min, max) {
   let eventValue = event.target.value.split(" ").join("");
