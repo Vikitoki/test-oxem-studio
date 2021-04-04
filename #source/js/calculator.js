@@ -22,8 +22,6 @@ rangePrice.addEventListener("input", function () {
 });
 
 rangePercentInput.addEventListener("input", function () {
-  console.log("from here", rangeValues[0].value.split(" ").join(""));
-
   const percentValue = Math.round(
     rangeValues[0].value.split(" ").join("") * (rangePercentInput.value / 100)
   );
@@ -48,14 +46,35 @@ rangeValues[0].addEventListener("change", function (event) {
 
   const newValue = checkMinMax(event, minValue, maxValue);
 
-  event.target.value = newValue;
+  event.target.value = calculatingTotalValue(null, newValue);
   rangeValues[1].value = `${calculatingTotalValue(null, currentMin)} ₽`;
   rangePercentInput.value = 10;
   rangePercentValue.textContent = `10%`;
-  rangePrice.value = rangeValues[0].value;
+  rangePrice.value = rangeValues[0].value.split(" ").join("");
 });
 
-rangeMonth.value = 1;
+rangeValues[0].addEventListener("input", function (event) {
+  const newValue = event.target.value.split(" ").join("");
+
+  million = Math.floor(parseInt(newValue) / 1000000);
+  thousand = Math.floor((parseInt(newValue) % 1000000) / 1000);
+  dozens = Math.floor((parseInt(newValue) % 1000000) % 1000);
+
+  const modifiedThousand = checkLength(thousand),
+    modifiedDozens = checkLength(dozens);
+
+  console.log(event.target.value.length);
+
+  if (event.target.value.length < 3) {
+    event.target.value = event.target.value;
+  } else if (event.target.value.length > 3) {
+    event.target.value = `${million ? million : ""} ${
+      modifiedThousand !== "000" ? modifiedThousand : ""
+    } ${modifiedDozens !== "000" ? modifiedDozens : ""}`;
+  } 
+
+  rangePrice.value = rangeValues[0].value.split(" ").join("");
+});
 
 rangeMonth.addEventListener("input", function (event) {
   rangeValues[2].value = event.target.value;
