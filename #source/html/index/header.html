@@ -1,7 +1,7 @@
 <header class="header">
   <div class="header__container container">
     <div class="header__left">
-      <a href="#" class="header__logo">
+      <a href="./index.html" class="header__logo">
         <picture>
           <source
             media="(min-width: 480px)"
@@ -11,7 +11,11 @@
             media="(max-width: 480px)"
             srcset="../images/header/logo-mobile.svg"
           />
-          <img src="../images/header/logo.svg" alt="Leasing Car" />
+          <img
+            src="../images/header/logo.svg"
+            alt="Leasing Car"
+            title="Перейти на главную страницу"
+          />
         </picture>
       </a>
 
@@ -21,20 +25,24 @@
       <div class="header__menu">
         <div class="header__menu-content">
           <button type="button" class="header__close">
-            <img src="../images/header/close.svg" alt="" />
+            <img
+              src="../images/header/close.svg"
+              alt="Закрыть"
+              title="Закрыть меню"
+            />
           </button>
           <ul class="header__list">
             <li class="header__leasing">
-              <a href="#" class="header__link">Лизинг</a>
+              <a href="#" target="_blank" class="header__link">Лизинг</a>
               <div class="header__actions actions-header">
                 <ul class="actions-header__list">
                   <li>
-                    <a href="#" class="actions-header__link">
+                    <a href="#" target="_blank" class="actions-header__link">
                       Для личного пользования
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="actions-header__link">
+                    <a href="#" target="_blank" class="actions-header__link">
                       Для юридических лиц
                     </a>
                   </li>
@@ -45,14 +53,16 @@
               </div>
             </li>
             <li>
-              <a href="#" class="header__link">Каталог</a>
+              <a href="#" class="header__link" target="_blank">Каталог</a>
             </li>
             <li>
-              <a href="#" class="header__link">О нас</a>
+              <a href="#" class="header__link" target="_blank">О нас</a>
             </li>
           </ul>
           <div class="header__btns header__btns_menu">
-            <a href="#" class="header__btn btn btn_orange">Оставить заявку</a>
+            <button type="button" class="header__btn btn btn_orange">
+              Оставить заявку
+            </button>
           </div>
         </div>
       </div>
@@ -62,7 +72,9 @@
         <span></span>
       </button>
       <div class="header__btns">
-        <a href="#" class="btn btn_orange-outline"> Оставить заявку </a>
+        <button type="button" class="btn btn_orange-outline">
+          Оставить заявку
+        </button>
       </div>
     </div>
   </div>

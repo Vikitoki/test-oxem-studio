@@ -1,8 +1,6 @@
 // Intro ====================================================
 
 .slider-intro {
-  &__body {
-  }
 
   &__navigations {
     display: block;
@@ -110,7 +108,6 @@
 
 .item-slider-intro {
   display: flex;
-  height: 480px;
 
   position: relative;
 

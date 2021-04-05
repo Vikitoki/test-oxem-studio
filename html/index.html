@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Главная</title>
+    <title>Lizing</title>
+		<meta name="description" content="Лизинг для вашей компании">
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +13,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
   </head>
   <body>
@@ -20,7 +21,7 @@
 <header class="header">
   <div class="header__container container">
     <div class="header__left">
-      <a href="#" class="header__logo">
+      <a href="./index.html" class="header__logo">
         <picture>
           <source
             media="(min-width: 480px)"
@@ -30,7 +31,11 @@
             media="(max-width: 480px)"
             srcset="../images/header/logo-mobile.svg"
           />
-          <img src="../images/header/logo.svg" alt="Leasing Car" />
+          <img
+            src="../images/header/logo.svg"
+            alt="Leasing Car"
+            title="Перейти на главную страницу"
+          />
         </picture>
       </a>
 
@@ -40,20 +45,24 @@
       <div class="header__menu">
         <div class="header__menu-content">
           <button type="button" class="header__close">
-            <img src="../images/header/close.svg" alt="" />
+            <img
+              src="../images/header/close.svg"
+              alt="Закрыть"
+              title="Закрыть меню"
+            />
           </button>
           <ul class="header__list">
             <li class="header__leasing">
-              <a href="#" class="header__link">Лизинг</a>
+              <a href="#" target="_blank" class="header__link">Лизинг</a>
               <div class="header__actions actions-header">
                 <ul class="actions-header__list">
                   <li>
-                    <a href="#" class="actions-header__link">
+                    <a href="#" target="_blank" class="actions-header__link">
                       Для личного пользования
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="actions-header__link">
+                    <a href="#" target="_blank" class="actions-header__link">
                       Для юридических лиц
                     </a>
                   </li>
@@ -64,14 +73,16 @@
               </div>
             </li>
             <li>
-              <a href="#" class="header__link">Каталог</a>
+              <a href="#" class="header__link" target="_blank">Каталог</a>
             </li>
             <li>
-              <a href="#" class="header__link">О нас</a>
+              <a href="#" class="header__link" target="_blank">О нас</a>
             </li>
           </ul>
           <div class="header__btns header__btns_menu">
-            <a href="#" class="header__btn btn btn_orange">Оставить заявку</a>
+            <button type="button" class="header__btn btn btn_orange">
+              Оставить заявку
+            </button>
           </div>
         </div>
       </div>
@@ -81,7 +92,9 @@
         <span></span>
       </button>
       <div class="header__btns">
-        <a href="#" class="btn btn_orange-outline"> Оставить заявку </a>
+        <button type="button" class="btn btn_orange-outline">
+          Оставить заявку
+        </button>
       </div>
     </div>
   </div>
@@ -105,14 +118,18 @@
             </div>
           </div>
           <div class="item-slider-intro__img">
-            <img src="../images/intro/auto.jpg" alt="" />
+            <img
+              src="../images/intro/auto.jpg"
+              alt="авто"
+              title="авто вашей мечты"
+            />
           </div>
         </div>
         <div class="slider-intro__item item-slider-intro">
           <div class="item-slider-intro__content">
-            <div class="item-slider-intro__title title title_white">
+            <h2 class="item-slider-intro__title title title_white">
               А это второй слайд!
-            </div>
+            </h2>
             <div class="item-slider-intro__slogan">
               Получите машину за 5 дней
             </div>
@@ -123,16 +140,24 @@
             </div>
           </div>
           <div class="item-slider-intro__img">
-            <img src="../images/intro/auto.jpg" alt="" />
+            <img
+              src="../images/intro/auto.jpg"
+              alt="авто"
+              title="авто вашей мечты"
+            />
           </div>
         </div>
         <div class="slider-intro__item item-slider-intro">
           <div class="item-slider-intro__content">
-            <div class="item-slider-intro__title title title_white">
+            <h3 class="item-slider-intro__title title title_white">
               А это третий слайд!
-            </div>
+            </h3>
             <div class="item-slider-intro__slogan">
-              Получите машину за 5 дней
+							А это описание подлинее. Высота слайдера подстроится сама!
+							
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+              libero veniam quos atque eveniet ipsum earum aperiam at odio,
+              deserunt, eos inventore, mollitia nisi culpa. 
             </div>
             <div class="item-slider-intro__btn">
               <button type="button" class="btn btn_orange">
@@ -141,7 +166,11 @@
             </div>
           </div>
           <div class="item-slider-intro__img">
-            <img src="../images/intro/auto.jpg" alt="" />
+            <img
+              src="../images/intro/auto.jpg"
+              alt="авто"
+              title="авто вашей мечты"
+            />
           </div>
         </div>
       </div>
@@ -151,13 +180,19 @@
           href="#"
           class="navigations-intro__arrow navigations-intro__arrow_prev"
         >
-          <img src="../images/intro/arrow-prev.svg" alt="" />
+          <img
+            src="../images/intro/arrow-prev.svg"
+            alt="вернуться на предыдущий слайд"
+          />
         </a>
         <a
           href="#"
           class="navigations-intro__arrow navigations-intro__arrow_next"
         >
-          <img src="../images/intro/arrow-next.svg" alt="" />
+          <img
+            src="../images/intro/arrow-next.svg"
+            alt="перейти на следующий слайд"
+          />
         </a>
       </div>
     </div>
@@ -175,11 +210,11 @@
           <div class="item-calculator__bottom">
             <div class="range">
               <div class="range__value">
-                <input type="input" name="price" id="price" value="3 300 000" />
+                <input type="text" name="price" id="price" value="3 200 000" />
                 <span> &#8381;</span>
               </div>
               <div class="range__slide range__slide_price">
-                <input maxlength="6" type="range" min="1000000" max="6000000" />
+                <input type="range" min="1000000" max="6000000" />
               </div>
             </div>
           </div>
@@ -189,17 +224,11 @@
           <div class="item-calculator__bottom">
             <div class="range">
               <div class="range__value range__value_percent">
-                <input type="input" name="price" id="price" disabled />
+                <input type="text" id="percent" />
                 <span class="range__percent">10%</span>
               </div>
               <div class="range__slide range__slide_percent">
-                <input
-                  type="range"
-                  name="persent"
-                  min="10"
-                  max="60"
-                  value="10"
-                />
+                <input type="range" min="10" max="60" value="10" />
               </div>
             </div>
           </div>
@@ -209,13 +238,7 @@
           <div class="item-calculator__bottom">
             <div class="range">
               <div class="range__value">
-                <input
-                  type="input"
-                  name="price"
-                  id="price"
-                  value="60"
-                  disabled
-                />
+                <input type="text" value="60" />
                 <span>мес.</span>
               </div>
               <div class="range__slide range__slide_month">
@@ -250,56 +273,69 @@
 </section>
 
 <div class="request-modal">
-	<div class="request-modal__content">
-		<div class="request-modal__container container">
-			<div class="request-modal__top">
-				<div class="request-modal__title">Онлайн-заявка</div>
-				<div class="request-modal__text">
-					<p>
-						Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все
-						вопросы
-					</p>
-				</div>
-			</div>
-			<div class="request-modal__main">
-				<form action="#" class="request-modal__form form">
-					<div class="form__items">
-						<div class="form__item">
-							<input type="tel" class="form__input _req"></input>
-						</div>
-						<div class="form__item">
-							<input type="text" class="form__input _req"" placeholder="Имя"></input>
-						</div>
-					</div>
-					<div class="form__footer">
-						<div class="form__text">
-							<p>
-								Нажимая на кнопку «Оставить заявку»,  я даю согласие <a href="#">на обработку персональных данных</a>
-							</p>
-						</div>
-						<div class="form__btn form__btn_request">
-							<button type="submit" class="btn btn_orange">Оставить заявку</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="request-modal__footer">
-				<div class="request-modal__social">
-					<a href="#">
-						<img src="../images/modals/icon-1.svg" alt="">
-					</a>
-					<a href="#">
-						<img src="../images/modals/icon-2.svg" alt="">
-					</a>
-				</div>
-			</div>	
-			<button type="button" class="request-modal__close">
-				<img src="../images/modals/close.svg" alt="">
-			</button>
-		</div>
-	</div>
-	
-  
+  <div class="request-modal__content">
+    <div class="request-modal__container container">
+      <div class="request-modal__top">
+        <div class="request-modal__title">Онлайн-заявка</div>
+        <div class="request-modal__text">
+          <p>
+            Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все
+            вопросы
+          </p>
+        </div>
+      </div>
+      <div class="request-modal__main">
+        <form action="#" class="request-modal__form form">
+          <div class="form__items">
+            <div class="form__item">
+              <input type="tel" class="form__input _req" />
+            </div>
+            <div class="form__item">
+              <input type="text" class="form__input _req" placeholder="Имя" />
+            </div>
+          </div>
+          <div class="form__footer">
+            <div class="form__text">
+              <p>
+                Нажимая на кнопку «Оставить заявку», я даю согласие
+                <a href="#">на обработку персональных данных</a>
+              </p>
+            </div>
+            <div class="form__btn form__btn_request">
+              <button type="submit" class="btn btn_orange">
+                Оставить заявку
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="request-modal__footer">
+        <div class="request-modal__social">
+          <a href="#">
+            <img
+              src="../images/modals/icon-1.svg"
+              alt="телеграмм"
+              title="перейти в телеграмм"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="../images/modals/icon-2.svg"
+              alt="whatsup"
+              title="перейти в whatsup"
+            />
+          </a>
+        </div>
+      </div>
+      <button type="button" class="request-modal__close">
+        <img
+          src="../images/modals/close.svg"
+          alt="закрыть окно"
+          title="закрыть текущее окно"
+        />
+      </button>
+    </div>
+  </div>
 </div>
     </div>
 

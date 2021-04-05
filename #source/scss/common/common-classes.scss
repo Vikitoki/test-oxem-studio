@@ -125,8 +125,8 @@
     line-height: 36px;
 
     input {
+      display: block;
       width: 100%;
-      max-width: 320px;
       padding-right: 40px;
 
       background: none;
@@ -152,8 +152,11 @@
   }
 
   &__percent {
+    flex: 0 0 55px;
     font-size: 20px;
     line-height: 24px;
+
+    text-align: right;
   }
 
   &__slide {

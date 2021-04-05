@@ -10,11 +10,11 @@
           <div class="item-calculator__bottom">
             <div class="range">
               <div class="range__value">
-                <input type="input" name="price" id="price" value="3 300 000" />
+                <input type="text" name="price" id="price" value="3 200 000" />
                 <span> &#8381;</span>
               </div>
               <div class="range__slide range__slide_price">
-                <input maxlength="6" type="range" min="1000000" max="6000000" />
+                <input type="range" min="1000000" max="6000000" />
               </div>
             </div>
           </div>
@@ -24,17 +24,11 @@
           <div class="item-calculator__bottom">
             <div class="range">
               <div class="range__value range__value_percent">
-                <input type="input" name="price" id="price" disabled />
+                <input type="text" id="percent" />
                 <span class="range__percent">10%</span>
               </div>
               <div class="range__slide range__slide_percent">
-                <input
-                  type="range"
-                  name="persent"
-                  min="10"
-                  max="60"
-                  value="10"
-                />
+                <input type="range" min="10" max="60" value="10" />
               </div>
             </div>
           </div>
@@ -44,13 +38,7 @@
           <div class="item-calculator__bottom">
             <div class="range">
               <div class="range__value">
-                <input
-                  type="input"
-                  name="price"
-                  id="price"
-                  value="60"
-                  disabled
-                />
+                <input type="text" value="60" />
                 <span>мес.</span>
               </div>
               <div class="range__slide range__slide_month">
