@@ -94,7 +94,6 @@ rangeValues[1].addEventListener("input", function (event) {
   this.value = modifiedValue;
   rangePercentInput.value = common;
 
-  console.log(common, currentMax);
 
   rangePercentValue.textContent = `${common > 60 ? 60 : common} %`;
 });

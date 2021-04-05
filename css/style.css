@@ -1071,6 +1071,35 @@ h6 {
   transform: translateY(-50%);
   transition: all 0.3 ease;
 }
+.form__item_tel::before {
+  content: "(921) 123 45 67";
+  position: absolute;
+  top: 52%;
+  left: 65px;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: translateY(-25%);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: rgba(17, 17, 17, 0.5);
+}
+@media (min-width: 1452px) {
+  .form__item_tel::before {
+    left: 65px;
+  }
+}
+@media (max-width: 479.98px) {
+  .form__item_tel::before {
+    left: 45px;
+  }
+}
+.form__item.hide::before {
+  display: none;
+}
 .form__item._complite::after {
   opacity: 1;
   visibility: visible;
@@ -1091,9 +1120,10 @@ h6 {
   border-radius: 16px;
   border: 1px solid transparent;
   background-color: #f3f3f4;
+  position: relative;
   font-size: 16px;
-  font-weight: 400;
-  color: #000;
+  font-weight: 700;
+  color: #575757;
   line-height: 24px;
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
@@ -1104,7 +1134,7 @@ h6 {
 }
 .form__input::placeholder {
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 700;
   color: #575757;
 }
 .form__input:focus {
