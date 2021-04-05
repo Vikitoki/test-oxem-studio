@@ -19,13 +19,14 @@ function postDataFromForm(event) {
 
 function formValidate(form) {
   let error = 0,
-    formReq = form.querySelectorAll("._req");
+    formReq = form.querySelectorAll("._req"),
+    forErrors = form.querySelectorAll(".error-text");
 
-  formReq.forEach((input) => {
-    formRemoveError(input);
+  formReq.forEach((input, index) => {
+    formRemoveError(input, forErrors[index]);
 
     if (input.value === "") {
-      formAddError(input);
+      formAddError(input, forErrors[index]);
       error++;
     }
   });
@@ -35,12 +36,14 @@ function formValidate(form) {
 
 // Функции компонентов для валидации и тогл классов ошибок
 
-function formAddError(input) {
+function formAddError(input, error) {
   input.classList.add("_error");
+  error.classList.add("active");
 }
 
-function formRemoveError(input) {
+function formRemoveError(input, error) {
   input.classList.remove("_error");
+  error.classList.remove("active");
 }
 
 // Fetch funcions
@@ -73,19 +76,21 @@ async function postData(form) {
   });
 
   if (!response.ok) {
-    throw new Error(`Couldn't fetch post ${url} , status ${response.status}`);
+    throw new Error(`Couldn't fetch post url , status ${response.status}`);
   }
 
-  console.log(`Данные успешно отправлены, статус ${response.status}`);
+  const items = document.querySelectorAll(".form__item");
 
-  form.querySelectorAll("._req").forEach((input) => {
-    input.classList.add("_complite");
+  items.forEach((item) => {
+    item.classList.add("_complite");
   });
 
   setTimeout(() => {
-    form.querySelectorAll("._req").forEach((input) => {
-      input.classList.remove("_complite");
+    items.forEach((item) => {
+      item.classList.remove("_complite");
     });
+    document.querySelector(".request-modal").classList.remove("active");
+    form.reset();
   }, 3000);
 
   return;

@@ -2,6 +2,7 @@ const rangePrice = document.querySelector(".range__slide_price input");
 const rangePercentInput = document.querySelector(".range__slide_percent input");
 const rangePercentValue = document.querySelector(".range__percent");
 const rangeValues = document.querySelectorAll(".range__value input");
+const ranges = document.querySelectorAll(".range");
 const rangeMonth = document.querySelector(".range__slide_month input");
 const contractTotalValue = document.querySelectorAll(
   ".footer-calculator__bottom"
@@ -11,6 +12,18 @@ const minValue = 1000000;
 const startValue = 3200000;
 let currentMin = "330 000";
 let currentMax = 1980000;
+
+rangeValues.forEach((input, index) => {
+  input.addEventListener("focus", function () {
+    this.classList.add("active");
+    ranges[index].classList.add("active");
+  });
+
+  input.addEventListener("blur", function () {
+    this.classList.remove("active");
+    ranges[index].classList.remove("active");
+  });
+});
 
 rangeValues[1].value = `${currentMin} ₽`;
 rangePrice.value = startValue;
@@ -120,7 +133,6 @@ rangeValues[2].addEventListener("change", function (event) {
   calculatingMonthlyPayment();
   calculatingTotalContractValue();
 });
-
 
 function calculatingTotalContractValue() {
   contractTotalValue[0].textContent = `${calculatingTotalValue(

@@ -134,7 +134,7 @@
               Получите машину за 5 дней
             </div>
             <div class="item-slider-intro__btn">
-              <button type="button" class="btn btn_orange">
+              <button disabled type="button" class="btn btn_orange">
                 Оставить заявку
               </button>
             </div>
@@ -153,14 +153,16 @@
               А это третий слайд!
             </h3>
             <div class="item-slider-intro__slogan">
-							А это описание подлинее. Высота слайдера подстроится сама!
-							
+              А это описание подлинее. Высота слайдера подстроится сама!
+              <br />
+              <br />
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
               libero veniam quos atque eveniet ipsum earum aperiam at odio,
-              deserunt, eos inventore, mollitia nisi culpa. 
+              deserunt, eos inventore, mollitia nisi culpa.
             </div>
-            <div class="item-slider-intro__btn">
+            <div class="item-slider-intro__btn item-slider-intro__btn_load">
               <button type="button" class="btn btn_orange">
+                <img src="../images/intro/loader.svg" alt="" />
                 Оставить заявку
               </button>
             </div>
@@ -289,16 +291,18 @@
           <div class="form__items">
             <div class="form__item">
               <input type="tel" class="form__input _req" />
+              <span class="error-text">Обязательное поле*</span>
             </div>
             <div class="form__item">
               <input type="text" class="form__input _req" placeholder="Имя" />
+              <span class="error-text">Обязательное поле*</span>
             </div>
           </div>
           <div class="form__footer">
             <div class="form__text">
               <p>
                 Нажимая на кнопку «Оставить заявку», я даю согласие
-                <a href="#">на обработку персональных данных</a>
+                <a href="#" target="_blank">на обработку персональных данных</a>
               </p>
             </div>
             <div class="form__btn form__btn_request">
@@ -311,14 +315,14 @@
       </div>
       <div class="request-modal__footer">
         <div class="request-modal__social">
-          <a href="#">
+          <a href="#" target="_blank">
             <img
               src="../images/modals/icon-1.svg"
               alt="телеграмм"
               title="перейти в телеграмм"
             />
           </a>
-          <a href="#">
+          <a href="#" target="_blank">
             <img
               src="../images/modals/icon-2.svg"
               alt="whatsup"
